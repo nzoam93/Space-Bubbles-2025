@@ -12,13 +12,13 @@ export default class Player{
         document.addEventListener("keydown", this.keydown);
         document.addEventListener("keyup", this.keyup);
 
-        // Mobile touch controls
-        document.addEventListener("touchstart", this.touchStart);
-        document.addEventListener("touchend", this.touchEnd);
+        // // Mobile touch controls
+        // document.addEventListener("touchstart", this.touchStart);
+        // document.addEventListener("touchend", this.touchEnd);
 
-        // Desktop (mouse)
-        document.addEventListener("mousedown", this.mouseDown);
-        document.addEventListener("mouseup", this.mouseUp);
+        // // Desktop (mouse)
+        // document.addEventListener("mousedown", this.mouseDown);
+        // document.addEventListener("mouseup", this.mouseUp);
 
         //animation stuff
         this.spriteImage = new Image();
@@ -142,28 +142,28 @@ export default class Player{
         }
     }
 
-     // Mobile input handlers
-    touchStart = (e) => {
-        e.preventDefault();
-        this.shootPressed = true;
-    }
+    //  // Mobile input handlers
+    // touchStart = (e) => {
+    //     e.preventDefault();
+    //     this.shootPressed = true;
+    // }
 
-    touchEnd = (e) => {
-        e.preventDefault();
-        this.shootPressed = false;
-    }
+    // touchEnd = (e) => {
+    //     e.preventDefault();
+    //     this.shootPressed = false;
+    // }
 
-    // Clicking with mouse input handlers
+    // // Clicking with mouse input handlers
 
-    mouseDown = (e) => {
-        e.preventDefault();
-        this.shootPressed = true;
-    }
+    // mouseDown = (e) => {
+    //     e.preventDefault();
+    //     this.shootPressed = true;
+    // }
 
-    mouseUp = (e) => {
-        e.preventDefault();
-        this.shootPressed = false;
-    }
+    // mouseUp = (e) => {
+    //     e.preventDefault();
+    //     this.shootPressed = false;
+    // }
 
     //note that the +3 in yPos is to account for the positioning of the sprite sheet.
     collideWithBubble(bubble){
