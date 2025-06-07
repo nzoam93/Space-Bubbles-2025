@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script src="./src/index.js" type="module" defer></script> <!--type="module" is a workaround for webpack-->
+    <title>Space Bubbles</title>
+    <link rel="icon" type="image/x-icon" href="./imgs/coin.ico"> <!--adds an image to the browser-->
+</head>
+<body>
+    <header>
+        <h1>Space Bubbles</h1>
+        <nav>
+            <a id="github" href="https://github.com/nzoam93"><img src="./imgs/github.png" alt="gitHub photo"></a>
+            <a id="linkedIn" href="https://www.linkedin.com/in/noam-zimet-4114a594"><img src="./imgs/linkedIn2.png" alt="linkedIn"></a>
+        </nav>
+    </header>
+
+    <canvas id="game"></canvas>
+    <div id="bottomPart">
+        <div id="level" class="bottomInfo">Level</div>
+        <div id="timer">Timer</div>
+        <button id="playButton" class="gameButton">Start Game!</button>
+        <button id="pauseButton" class="gameButton">Pause</button>
+        <div id="lives" class="bottomInfo">Lives: 3</div>
+        <button id="bonusInfo" class="gameButton">Bonus Info</button>
+        <button id="homeScreen" class="gameButton">Home Screen</button>
+        <input id="muteButton" type="image" src="./imgs/volume.png">
+    </div>
+</body>
+</html>

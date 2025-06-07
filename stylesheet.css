@@ -1,0 +1,104 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+     /* background: linear-gradient(
+        0deg,
+        rgb(224, 224, 132) 0%,
+        rgb(111, 14, 207) 100%
+    ); */
+    background-image: url("./imgs/blurredBackground.png");
+    font-family: fantasy;
+}
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    margin-left: 100px;
+    margin-right: 0px;
+}
+
+#github img{
+    height: 40px;
+    width: 40px;
+    margin-bottom: 12px;
+}
+
+#linkedIn img{
+    width: 70px;
+    height: 70px;
+}
+
+h1{
+    margin-right: 150px;
+    margin: 10px;
+    margin-bottom: 0px;
+    font-size: 45px;
+    color:yellow;
+}
+
+#bottomPart{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 75px;
+    width: 1000px;
+    background-image: url("./imgs/background.png");
+    font-size: xx-large;
+    color: white;
+}
+
+
+
+#timer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+#lives{
+    width: auto;
+    /* makes it not auto-update the width when it changes */
+}
+
+#muteButton{
+    height: 30px;
+    width: 30px;
+}
+
+
+/* CSS  Got some info from https://getcssscan.com/css-buttons-examples */
+.gameButton {
+  max-height: 30px;
+  align-items: center;
+  background-image: linear-gradient(100deg,#ac59e7, #634def 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.gameButton:active,
+.gameButton:hover {
+  outline: 0;
+}
+
+
+/* .gameButton{
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: lavenderblush;
+    font-size: x-large;
+} */
