@@ -12,6 +12,14 @@ export default class Player{
         document.addEventListener("keydown", this.keydown);
         document.addEventListener("keyup", this.keyup);
 
+        // Mobile touch controls
+        document.addEventListener("touchstart", this.touchStart);
+        document.addEventListener("touchend", this.touchEnd);
+
+        // Desktop (mouse)
+        document.addEventListener("mousedown", this.mouseDown);
+        document.addEventListener("mouseup", this.mouseUp);
+
         //animation stuff
         this.spriteImage = new Image();
         this.spriteImage.src = "./imgs/runningSprite.png";
@@ -25,6 +33,35 @@ export default class Player{
         this.staggerFrame = 7;
 
     }
+
+     setupTiltControl() {
+        const threshold = 15;
+        const handleOrientation = (event) => {
+            const tiltLeftRight = event.gamma;
+
+            this.leftPressed = tiltLeftRight < -threshold;
+            this.rightPressed = tiltLeftRight > threshold;
+
+            // Optional dead zone reset
+            if (Math.abs(tiltLeftRight) < threshold) {
+                this.leftPressed = false;
+                this.rightPressed = false;
+            }
+        };
+
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(permissionState => {
+                    if (permissionState === 'granted') {
+                        window.addEventListener('deviceorientation', handleOrientation);
+                    }
+                })
+                .catch(console.error);
+        } else {
+            window.addEventListener('deviceorientation', handleOrientation);
+        }
+    }
+
 
     draw(ctx){
         //determine if it has moved left or right. This info used for drawImage below
@@ -103,6 +140,29 @@ export default class Player{
         if(e.code === "Space"){
             this.shootPressed = false;
         }
+    }
+
+     // Mobile input handlers
+    touchStart = (e) => {
+        e.preventDefault();
+        this.shootPressed = true;
+    }
+
+    touchEnd = (e) => {
+        e.preventDefault();
+        this.shootPressed = false;
+    }
+
+    // Clicking with mouse input handlers
+
+    mouseDown = (e) => {
+        e.preventDefault();
+        this.shootPressed = true;
+    }
+
+    mouseUp = (e) => {
+        e.preventDefault();
+        this.shootPressed = false;
     }
 
     //note that the +3 in yPos is to account for the positioning of the sprite sheet.

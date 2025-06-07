@@ -40,6 +40,10 @@ export default class Game{
     }
 
     startGame(){
+
+        //allows for the tilting to be counted by the phone
+        this.player.setupTiltControl();
+
         //sets the background to not be blurry
         this.canvasBackground.src = './imgs/background.png';
 
